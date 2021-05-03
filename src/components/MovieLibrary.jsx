@@ -2,20 +2,30 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MovieList from './MovieList';
 import SearchBar from './SearchBar';
-import AddMovie from './AddMovie';
 
 class MovieLibrary extends Component {
   constructor(props) {
     super(props);
+    const { movies } = this.props;
+    this.state = {
+      allMovies: movies,
+    };
   }
 
   render() {
-    const { movies } = this.props;
+    const { allMovies } = this.state;
     return (
       <div>
         <h2> My awesome movie library </h2>
-        {/* <SearchBar /> */}
-        <MovieList movies={ movies } />
+        <SearchBar
+          searchText=""
+          onSearchTextChange=""
+          bookmarkedOnly=""
+          onBookmarkedChange=""
+          selectedGenre=""
+          onSelectedGenreChange=""
+        />
+        <MovieList movies={ allMovies } />
         {/* <AddMovie /> */}
       </div>
     );
@@ -31,7 +41,19 @@ MovieLibrary.propTypes = {
     imagePath: PropTypes.string,
     bookmarked: PropTypes.bool,
     genre: PropTypes.string,
-  })).isRequired,
+  })),
+};
+
+MovieLibrary.defaultProps = {
+  movies: {
+    title: 'TITLE',
+    subtitle: 'SUBTITLE',
+    storyline: 'STORYLINE',
+    rating: 0.0,
+    imagePath: 'images/Kingsglaive_Final_Fantasy_XV.jpg',
+    bookmarked: false,
+    genre: 'GENRE',
+  },
 };
 
 export default MovieLibrary;
