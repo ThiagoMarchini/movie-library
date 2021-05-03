@@ -10,7 +10,6 @@ class InputNumber extends React.Component {
         { label }
         <input
           type="number"
-          pattern="[0-9]*"
           data-testid={ inputId }
           name={ htmlFor }
           value={ value }
