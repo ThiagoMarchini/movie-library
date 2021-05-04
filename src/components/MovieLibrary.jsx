@@ -19,7 +19,6 @@ class MovieLibrary extends Component {
 
   filterBySearch = (search) => {
     const { backup } = this.state;
-    console.log(search);
     this.setState({
       allMovies: backup.filter((entry) => (
         entry.title.includes(search)
@@ -31,6 +30,7 @@ class MovieLibrary extends Component {
 
   filterByBookmarked = (boolean) => {
     const { backup } = this.state;
+    // console.log(boolean);
     if (boolean === true) {
       this.setState({
         allMovies: backup.filter((entry) => entry.bookmarked === boolean),
@@ -63,7 +63,6 @@ class MovieLibrary extends Component {
 
   render() {
     const { allMovies, searchText, bookmarkedOnly, selectedGenre } = this.state;
-    console.log(allMovies);
     return (
       <div>
         <h2> My awesome movie library </h2>
@@ -73,7 +72,7 @@ class MovieLibrary extends Component {
           bookmarkedOnly={ bookmarkedOnly }
           onBookmarkedChange={ this.filterByBookmarked }
           selectedGenre={ selectedGenre }
-          filterByGenre={ this.filterByGenre }
+          onSelectedGenreChange={ this.filterByGenre }
         />
         <MovieList movies={ allMovies } />
         <AddMovie onClick={ this.onClick } />

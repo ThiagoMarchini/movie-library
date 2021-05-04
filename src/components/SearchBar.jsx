@@ -22,12 +22,11 @@ class SearchBar extends React.Component {
   }
 
   handleChange({ target }) {
-    console.log(target.name);
     const { name } = target;
     const {
       onSearchTextChange,
       onBookmarkedChange,
-      filterByGenre,
+      onSelectedGenreChange,
     } = this.props;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
@@ -40,7 +39,7 @@ class SearchBar extends React.Component {
       onBookmarkedChange(value);
     }
     if (target.name === 'genre') {
-      filterByGenre(value);
+      onSelectedGenreChange(value);
     }
   }
 
@@ -98,7 +97,7 @@ SearchBar.propTypes = {
   selectedGenre: PropTypes.string.isRequired,
   onSearchTextChange: PropTypes.func.isRequired,
   onBookmarkedChange: PropTypes.func.isRequired,
-  filterByGenre: PropTypes.func.isRequired,
+  onSelectedGenreChange: PropTypes.func.isRequired,
 };
 
 export default SearchBar;
