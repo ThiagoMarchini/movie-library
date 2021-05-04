@@ -13,7 +13,7 @@ class MovieLibrary extends Component {
     };
   }
 
-  addMovieToList = (movie) => {
+  onClick = (movie) => {
     this.setState((estadoAnterior) => ({
       allMovies: [...estadoAnterior.allMovies, movie],
     }));
@@ -34,7 +34,7 @@ class MovieLibrary extends Component {
           onSelectedGenreChange=""
         />
         <MovieList movies={ allMovies } />
-        <AddMovie addMovieToList={ this.addMovieToList } />
+        <AddMovie onClick={ this.onClick } />
       </div>
     );
   }
