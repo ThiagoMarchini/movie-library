@@ -26,7 +26,7 @@ InputText.propTypes = {
     labelId: PropTypes.string,
     label: PropTypes.string,
     inputId: PropTypes.string,
-    value: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
+    value: PropTypes.string,
     callback: PropTypes.func,
   })).isRequired,
 };
