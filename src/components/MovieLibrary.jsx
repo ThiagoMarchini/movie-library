@@ -13,8 +13,15 @@ class MovieLibrary extends Component {
     };
   }
 
+  addMovieToList = (movie) => {
+    this.setState((estadoAnterior) => ({
+      allMovies: [...estadoAnterior.allMovies, movie],
+    }));
+  }
+
   render() {
     const { allMovies } = this.state;
+    // console.log(allMovies);
     return (
       <div>
         <h2> My awesome movie library </h2>
@@ -27,7 +34,7 @@ class MovieLibrary extends Component {
           onSelectedGenreChange=""
         />
         <MovieList movies={ allMovies } />
-        <AddMovie />
+        <AddMovie addMovieToList={ this.addMovieToList } />
       </div>
     );
   }

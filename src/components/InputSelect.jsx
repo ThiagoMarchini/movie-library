@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class InputSelect extends React.Component {
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const { param: [
       htmlFor, labelId, label, inputId, value, callback, optionId] } = this.props;
     return (

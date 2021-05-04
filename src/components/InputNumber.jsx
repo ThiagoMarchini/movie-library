@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class InputNumber extends React.Component {
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const { param: [htmlFor, labelId, label, inputId, value, callback] } = this.props;
     return (
       <label htmlFor={ htmlFor } data-testid={ labelId }>
