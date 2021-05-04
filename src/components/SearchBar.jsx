@@ -67,7 +67,7 @@ class SearchBar extends React.Component {
             id="checkbox"
             type="checkbox"
             data-testid="checkbox-input"
-            value={ favorites }
+            checked={ favorites }
             onChange={ this.handleChange }
           />
           Mostrar somente favoritos
