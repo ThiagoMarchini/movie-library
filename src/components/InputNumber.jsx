@@ -20,14 +20,11 @@ class InputNumber extends React.Component {
 }
 
 InputNumber.propTypes = {
-  param: PropTypes.arrayOf(PropTypes.shape({
-    htmlFor: PropTypes.string,
-    labelId: PropTypes.string,
-    label: PropTypes.string,
-    inputId: PropTypes.string,
-    value: PropTypes.number,
-    callback: PropTypes.func,
-  })).isRequired,
+  param: PropTypes.arrayOf(PropTypes.any),
+};
+
+InputNumber.defaultProps = {
+  param: [],
 };
 
 export default InputNumber;

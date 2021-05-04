@@ -24,15 +24,11 @@ class InputSelect extends React.Component {
 }
 
 InputSelect.propTypes = {
-  param: PropTypes.arrayOf(PropTypes.shape({
-    htmlFor: PropTypes.string,
-    labelId: PropTypes.string,
-    label: PropTypes.string,
-    inputId: PropTypes.string,
-    value: PropTypes.string,
-    callback: PropTypes.func,
-    optionId: PropTypes.string,
-  })).isRequired,
+  param: PropTypes.arrayOf(PropTypes.any),
+};
+
+InputSelect.defaultProps = {
+  param: [],
 };
 
 export default InputSelect;

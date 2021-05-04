@@ -20,14 +20,11 @@ class InputText extends React.Component {
 }
 
 InputText.propTypes = {
-  param: PropTypes.arrayOf(PropTypes.shape({
-    htmlFor: PropTypes.string,
-    labelId: PropTypes.string,
-    label: PropTypes.string,
-    inputId: PropTypes.string,
-    value: PropTypes.string,
-    callback: PropTypes.func,
-  })).isRequired,
+  param: PropTypes.arrayOf(PropTypes.any),
+};
+
+InputText.defaultProps = {
+  param: [],
 };
 
 export default InputText;
